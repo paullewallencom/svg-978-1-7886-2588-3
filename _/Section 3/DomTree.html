@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Document Object</title>
+</head>
+<body>
+
+<object data="ex.svg" type="image/svg+xml" id="svg"></object>
+
+<script>
+   var a = document.getElementById("svg");
+ 	    
+		a.addEventListener("load",function(){
+            var svgDoc = a.contentDocument; //get the inner DOM of ex.svg
+	       
+			
+            var b= svgDoc.getElementById("circle"); //get the inner element by id
+            b.addEventListener("mousedown",function(){
+                
+                alert('clicked!')},false);
+                
+            
+        },false);
+
+</script>
+
+</body>
+</html>
+
+
+ 
+
+

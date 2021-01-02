@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Append</title>
+</head>
+<body>
+
+<svg id="mysvg" 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="300" height="300"  style="background-color:#333;">
+  <rect x="94" y="131" class="st0" width="100" height="100"/>
+</svg>
+
+<script>
+var svg=document.getElementById("mysvg");
+
+ var rect=function(h,w,fill){
+ var NS="http://www.w3.org/2000/svg";
+ var SVGObj= document.createElementNS(NS,"rect");
+ SVGObj.width.baseVal.value=w;
+ SVGObj.height.baseVal.value=h;
+ SVGObj.setAttribute("height",h);
+ SVGObj.style.fill=fill;
+ return SVGObj;
+}
+
+var SVGshape= rect(100,100,"blue");
+svg.appendChild(SVGshape);
+
+for(i=0;i<100;i++){
+ SVGshape.x.baseVal.value+=1;
+ SVGshape.y.baseVal.value+=1;
+}
+var animate=function(obj){
+ obj.x.baseVal.value+=1;
+ obj.y.baseVal.value+=1;
+}
+setInterval("animate(SVGshape)",100);
+
+
+</script>
+
+</body>
+</html>
+
+

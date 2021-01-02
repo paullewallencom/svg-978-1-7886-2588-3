@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Svg Morph</title>
+</head>
+<style>
+button {
+ display:none;
+}
+</style>
+<body>
+  <svg id="hello" width="300"viewBox="0 0 494.6 485.1">
+    
+    <polygon fill="#FFD41D" points="254,186.6 328.4,147.5 314.1,230.3 374.3,289 291.2,301 254,376.4 216.8,301 133.6,289 193.8,230.3 
+	179.6,147.5 ">
+      
+      <animate id="animation-to-Main" begin="indefinite" fill="freeze" attributeName="points" dur="500ms" to="256.5,83 345.1,111.7 399.8,187.1 399.8,280.3 345.1,355.6 256.5,384.4 167.9,355.6 113.1,280.3 113.1,187.1 167.9,111.7 "/>
+	  
+	  
+     <animate id="animation-to-Second" begin="indefinite" fill="freeze" attributeName="points" dur="500ms" to="254,186.6 328.4,147.5 314.1,230.3 374.3,289 291.2,301 254,376.4 216.8,301 133.6,289 193.8,230.3 
+	179.6,147.5 "/>
+	
+	
+       </polygon>
+    
+  </svg>
+
+
+
+
+
+
+
+
+
+
+  <button id="button">
+  <span id="button-text">1</span>
+</button>
+<script>
+var icon = document.getElementById("button"),
+    buttonText = document.getElementById("button-text"),
+    animationToMain = document.getElementById("animation-to-Main"),
+    animationToSecond = document.getElementById("animation-to-Second");
+	
+var test = document.getElementById("hello");
+
+test.addEventListener('click', function() {
+  if (button.classList.contains("2")) {
+    button.classList.remove("2");
+    animationToSecond.beginElement();
+    buttonText.innerHTML = "1";
+  } else {
+    button.classList.add("2");
+    animationToMain.beginElement();
+    buttonText.innerHTML = "2";
+  }
+  
+}, false);
+</script>
+</body>
+</html>

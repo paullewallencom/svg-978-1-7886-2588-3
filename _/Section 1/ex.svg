@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 1136" style="enable-background:new 0 0 640 1136;" xml:space="preserve" >
+
+
+<style type="text/css">
+	
+	#svg{opacity:1;}
+        .st0{fill:#0000FF;}
+	.st1{fill:#22B573;}
+	.st2{fill:black;}
+        .st2:hover{fill:red;}
+</style>
+
+
+<g id="triangle">
+	<polygon class="st0" points="313.9,782.7 506,782.7 409.9,949.1 313.9,1115.4 217.8,949.1 121.8,782.7 "/>
+</g>
+
+<g id="circle">
+	<ellipse class="st1" cx="314.6" cy="567.9" rx="194.4" ry="193.8"/>
+</g>
+
+<g id="square">
+	<rect x="140.8" y="35.8" class="st2" width="337" height="322.2"/>
+</g>
+
+</svg>

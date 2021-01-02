@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Raphael</title>
+ <style type="text/css" media="screen">
+            #canvas {
+                height: 400px;
+                left: 50%;
+                margin: -150px 0 0 -300px;
+                position: absolute;
+                top: 50%;
+                width: 600px;
+            }
+            #paper {
+                height: 300px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 300px;
+            }
+            #nsw, #vic, #wa, #sa, #nt, #qld, #tas {
+                display: none;
+                height: 300px;
+                overflow: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 200px;
+			
+            }
+  
+        </style>
+ <script src="raphael.js" type="text/javascript" charset="utf-8"></script>              
+
+        <script type="text/javascript" charset="utf-8">
+        window.onload = function () {
+            var R = Raphael("paper", 300, 300);
+            var attr = {
+                fill: "#333",
+                stroke: "#666",
+                "stroke-width": 1,
+                "stroke-linejoin": "round"
+            };
+            var aus = {};
+            aus.vic = R.path("M223,259H123V159h100V259z").attr(attr);
+            aus.nsw = R.path("M233,83.5c0,31.8-25.7,57.5-57.5,57.5S118,115.3,118,83.5S143.7,26,175.5,26S233,51.7,233,83.5z").attr(attr);
+       
+            var current = null;
+            for (var state in aus) {
+                aus[state].color = Raphael.getColor();
+                (function (st, state) {
+                    st[0].style.cursor = "pointer";
+                    st[0].onmouseover = function () {
+                        current && aus[current].animate({fill: "#333", stroke: "#666"}, 500) && (document.getElementById(current).style.display = "");
+                        st.animate({fill: st.color, stroke: "#ccc"}, 500);
+                        st.toFront();
+                        R.safari();
+                        document.getElementById(state).style.display = "block";
+                        current = state;
+                    };
+                    st[0].onmouseout = function () {
+                        st.animate({fill: "#333", stroke: "#666"}, 500);
+                        st.toFront();
+                        R.safari();
+                    };
+                    if (state == "nsw") {
+                        st[0].onmouseover();
+                    }
+                })(aus[state], state);
+            }
+        };
+        </script>
+    </head>
+    <body>
+        <div id="canvas">
+            <div id="paper"></div>
+            <div id="nsw">
+                <h2>Rectangle</h2>
+                <p> Has four sides</p>
+            </div>
+            <div id="vic">
+                <h2>Circles</h2>
+                <p>Have rounded corners</p>
+            </div>
+     
+        </div>
+</body>
+</html>

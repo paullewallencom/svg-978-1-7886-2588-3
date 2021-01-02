@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SVG morphs</title>
+</head>
+<body>
+
+<svg viewbox="0 0 100 100" width="300">
+  <path fill="#1EB287">
+    <animate 
+             attributeName="d" 
+             dur="20000ms" 
+             repeatCount="indefinite"
+             keyTimes="0;
+                       .25;
+                       .50;
+                       1"
+             
+             values="M 0,0 
+                     C 50,0 50,0 100,0
+                     100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     Z;
+
+                   
+
+                     M 50,0 
+                     C 75,25 75,25 100,50 
+                     75,75 75,75 50,100
+                     25,75 25,75 0,50
+                     25,25 25,25 50,0
+                     Z;
+
+                       M 0,0 
+                     C 50,0 50,0 100,0
+                     100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     Z;
+					 
+                     M 100,0 
+                     C 100,50 100,50 100,100
+                     50,100 50,100 0,100
+                     0,50 0,50 0,0
+                     50,0 50,0 100,0
+                     Z;"/>
+    <animate 
+             attributeName="fill"
+             dur="1000ms" 
+             repeatCount="indefinite"
+             keyTimes="0;
+                       .5;
+                       .75;
+                       1"
+             values="#188fc2;
+                     #bb625e;
+                     #ca5f52;
+                     #1eb287;"/>
+  </path>
+</svg>
+</body>
+</html>

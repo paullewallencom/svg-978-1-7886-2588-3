@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Snap SVG</title>
+ <script src="snap.svg-min.js"></script>
+</head>
+
+<body>
+
+<svg id="svg"></svg>
+   
+    <script>
+   var s = Snap("#svg");
+   var bigCircle = s.circle(50, 50, 10);
+		bigCircle.attr({
+			fill: "#bada55",
+			stroke: "#000",
+			strokeWidth: 5
+		});
+bigCircle.drag();
+		
+		  var line = s.line(50, 50, 100, 100);
+		line.attr({
+			stroke: "#000",
+			strokeWidth: 5
+		});
+	
+   </script>
+  
+</body>
+</html>

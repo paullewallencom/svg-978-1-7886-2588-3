@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg >
+    <title>Title</title>
+    <desc>
+      This is a bar chart which shows 
+      company sales by region.
+    </desc>
+	
+	 <defs>
+		<g id="Port">
+		  <circle style="fill: inherit;" r="100"/>
+		</g>
+	</defs>
+	
+	 <use x="150" y="150" href="#Port"  style="fill: blue;"/>
+	  <use x="50" y="50" href="#Port" style="fill: red;"/>
+     <text id="currentText" font-size="32"  x="25" y="60" fill="green">
+            Hello!
+    </text> 
+
+<script>
+   var currentVal = document.getElementById("currentText");
+   var clicker = document.getElementById("currentText");
+ clicker.addEventListener('click', function() {
+ currentVal.textContent = "everybody";
+});
+</script>
+	
+	</svg>
+	
+
